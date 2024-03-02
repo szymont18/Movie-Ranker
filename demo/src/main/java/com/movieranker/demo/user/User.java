@@ -3,10 +3,7 @@ package com.movieranker.demo.user;
 import com.movieranker.demo.user.utils.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,12 +12,12 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
-@Entity
-@Table(name = "Movie-Users")
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "movie_users")
 public class User implements UserDetails {
 
     @Id
